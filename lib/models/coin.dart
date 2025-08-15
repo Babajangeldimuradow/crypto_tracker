@@ -17,9 +17,9 @@ class Coin {
     return Coin(
       id: json['id'],
       name: json['name'],
-      symbol: json['symbol'].toUpperCase(),
-      price: json['current_price']?.toDouble() ?? 0,
-      change24h: json['price_change_percentage_24h']?.toDouble() ?? 0,
+      symbol: (json['symbol'] as String).toUpperCase(),
+      price: (json['current_price'] ?? 0).toDouble(),
+      change24h: (json['price_change_percentage_24h'] ?? 0).toDouble(),
     );
   }
 }
